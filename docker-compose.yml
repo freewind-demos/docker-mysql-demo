@@ -1,0 +1,12 @@
+version: '3'
+services:
+  mysql:
+    image: mysql/mysql-server:5.6.45
+    environment:
+      - MYSQL_ROOT_PASSWORD=123456
+      - MYSQL_ROOT_HOST=%
+      - MYSQL_DATABASE=mydb
+    ports:
+    - 23306:3306
+    volumes:
+    - ./docker-entrypoint-initdb.d:/docker-entrypoint-initdb.d
